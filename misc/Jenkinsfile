@@ -16,4 +16,9 @@ node {
        def app = docker.build("mbagwari/docker-nodejs-image:${commit_id}", '.').push()
      }
    }
+   stage('Run') {
+     nodejs(nodeJSInstallationName: 'nodejs') {
+       sh 'npm start'
+     }
+   }
 }

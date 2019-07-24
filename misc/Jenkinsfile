@@ -18,6 +18,7 @@ node {
    }
    stage('Run') {
      nodejs(nodeJSInstallationName: 'nodejs') {
+        sh 'npm install'
        sh 'npm start'
      }
    }
